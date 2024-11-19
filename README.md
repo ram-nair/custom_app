@@ -1,66 +1,36 @@
-Prerequisites
---------------
-1.Installed Docker
-2.Docker Compose installed on your system
-3.Git installed 
+Multi-level Affiliate Payout System:
+------------------------------------
 
-Clone the application:
-git clone <your-laravel-repo-url>
+The application is developed in  PHP based CodeIgniter application Development Framework.
+It is developed as an admin managed system,so admin is doing all the functionality after login.
 
-4.Create Docker Configuration Files
-(Create a file named Dockerfile in project root)
+The database is Mysql 
 
-5.Create a file named docker-compose.yml in project root
+Server Requirements:
+*******************
+PHP version 5.6 or newer is recommended.
 
-6.Create a directory named nginx/conf.d in the project root and add a file named app.conf
-
-7.Create a directory named php in the project root and add a file named local.ini
-
-8.Update .env File using the Sqlite database details & config Middleware details
-(DB_CONNECTION=sqlite
-DB_DATABASE=C:\wamp64\www\custom-sqlite-app\database\database.sqlite)
-
-REQUEST_LOGGING_ENABLED=true
+It should work on 5.3.7 as well, but we strongly advise you NOT to run
+such old versions of PHP, because of potential security and performance
+issues, as well as missing features.
 
 
-9.Build and Run Docker Containers
-(docker-compose build app
-docker-compose up -d)
+Installation:
+*****************
 
-10.Install Dependencies
-(docker-compose exec app composer install)
+Unzip the folder and put in side www folder of WAMP
+open Phpmyadmin and create a database called  "affiliate_db" and import the db file inside the folder called "db"
 
-11.application key
+Run Locally:
+*************
 
-docker-compose exec app php artisan key:generate
+Backend (Admin):
+*****************
 
-
-12.Run Migration:
-docker-compose exec app php artisan migrate
-
-
-13.clear cache:
-docker-compose exec app php artisan config:cache
-docker-compose exec app php artisan route:cache
+http://localhost/Affiliate-Pay-System/
 
 
-14.Viewing Logs in SQLite
+user:admin@gmail.com
+password:12
 
-php artisan tinker
-inside tinker 
-DB::table('request_logs')->get();
-
-check in browser:
-http://127.0.0.1:8000/
-
-
-
-Make change(true/false) the flag(REQUEST_LOGGING_ENABLED) in the .ENV file for writing log in sqlite db.
-
-
-
-
-
-
-
-
+Functionality completed as per the documentation given.
